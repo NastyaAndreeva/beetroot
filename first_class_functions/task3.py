@@ -1,8 +1,8 @@
-def choose_func(nums_list, cb1, cb2):
+def choose_func(nums_list, cb_1, cb_2):
     for el in nums_list:
         if el < 0:
-            return cb2(nums_list)
-    return cb1(nums_list)
+            return cb_2(nums_list)
+    return cb_1(nums_list)
 
 def square_nums(nums):
     return [num ** 2 for num in nums]
