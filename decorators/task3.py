@@ -9,9 +9,8 @@ def arg_rules(type_: type, max_length: int, contains: list):
             for el in contains:
                 if el in name:
                     should_contain_dict[el] = True
-            for key, value in should_contain_dict.items():
-                if value == False:
-                    return f"{name} must contain {key}"
+            if False in should_contain_dict.values():
+                return f"{name} must contain all the symbols from the list {contains}"
             return func(name)
 
         return inner_wrapper
