@@ -1,18 +1,14 @@
 def arg_rules(type_: type, max_length: int, contains: list):
     def outer_wrapper(func):
         def inner_wrapper(name):
-            should_contain_dict = {el: False for el in contains}
             if not type(name) == type_:
                 return f"{name} must be a string"
             if len(name) > max_length:
                 return "The name is too long"
             for el in contains:
-                if el in name:
-                    should_contain_dict[el] = True
-            if False in should_contain_dict.values():
-                return f"{name} must contain all the symbols from the list {contains}"
+                if not el in name:
+                    return f"{name} must contain {el}"
             return func(name)
-
         return inner_wrapper
     return outer_wrapper
 
