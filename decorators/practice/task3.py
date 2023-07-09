@@ -8,6 +8,7 @@ def reverse_boolean_value(func):
         else:
             return True
     return reverse_wrapper
+    
 @reverse_boolean_value
 def is_number(a):
     return type(a)
