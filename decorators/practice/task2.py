@@ -1,4 +1,7 @@
 from functools import wraps
+import time
+
+print(time.strftime("%Y-%m-%d %H:%M:%S"))
 
 def add_brake_log(size=5):
     def add_brake_log_dec(func):
@@ -26,3 +29,4 @@ test()
 test()
 test()
 test()
+print(not False)
