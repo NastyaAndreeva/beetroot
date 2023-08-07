@@ -1,0 +1,1 @@
+There is my custom exception: 2023-07-16 18:57:31
